@@ -12,12 +12,6 @@ use Symfony\Component\HttpFoundation\Session\Session;
 trait SessionTrait
 {
     /**
-     * @param $id
-     * @return mixed
-     */
-    abstract protected function get($id);
-
-    /**
      * @return Session
      */
     protected function session()
