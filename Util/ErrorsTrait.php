@@ -9,21 +9,6 @@ namespace SW\Helper\Util;
  */
 trait ErrorsTrait
 {
-
-    /**
-     * @param string $message
-     * @param \Exception|null $previous
-     * @return mixed
-     */
-    abstract protected function createNotFoundException($message = 'Not Found.', \Exception $previous = null);
-
-    /**
-     * @param string $message
-     * @param \Exception|null $previous
-     * @return mixed
-     */
-    abstract protected function createAccessDeniedException($message = 'Access Denied.', \Exception $previous = null);
-
     /**
      * @param string $message
      */
