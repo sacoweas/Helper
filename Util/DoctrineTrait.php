@@ -14,11 +14,6 @@ use Doctrine\Common\Persistence\ObjectManager;
 trait DoctrineTrait
 {
     /**
-     * @return Registry
-     */
-    abstract protected function getDoctrine();
-
-    /**
      * @param $object
      * @param null $manager
      * @return ObjectRepository
