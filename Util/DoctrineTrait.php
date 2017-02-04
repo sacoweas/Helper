@@ -76,6 +76,16 @@ trait DoctrineTrait
      * @param null $manager
      * @return void
      */
+    protected function save($object, $manager = null)
+    {
+        $this->persist($object, true, $manager);
+    }
+
+    /**
+     * @param $object
+     * @param null $manager
+     * @return void
+     */
     protected function update($object, $manager = null)
     {
         $this->persist($object, true, $manager);
