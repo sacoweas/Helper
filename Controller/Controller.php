@@ -87,4 +87,31 @@ class Controller extends BaseController
         }
         return $this->expression;
     }
+
+    /**
+     * @return \Knp\Component\Pager\Paginator
+     */
+    protected function paginator()
+    {
+        if (!$this->has('knp_paginator')) {
+            $this->Error('The KNP Paginator is not registered in your application.');
+        }
+        return $this->get('knp_paginator');
+    }
+    
+    /**
+     * @param mixed $target - anything what needs to be paginated
+     * @param integer $page - page number, starting from 1
+     * @param integer $limit - number of items per page
+     * @param array $options - less used options:
+     *     boolean $distinct - default true for distinction of results
+     *     string $alias - pagination alias, default none
+     *     array $whitelist - sortable whitelist for target fields being paginated
+     * @throws \LogicException
+     * @return \Knp\Component\Pager\Pagination\PaginationInterface
+     */
+    public function paginate($target, $page = 1, $limit = 10, array $options = array())
+    {
+        return $this->paginator()->paginate($target, $page, $limit, $options);
+    }    
 }
